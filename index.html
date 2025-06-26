@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Firebase 掲示板（メールログイン）</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>ログイン</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <h1>ログインまたは登録</h1>
 
-  <h1>Firebase 掲示板</h1>
-
-  <!-- 認証フォーム -->
-  <div id="auth-section">
-    <input type="email" id="email" placeholder="メールアドレス" required />
-    <input type="password" id="password" placeholder="パスワード" required />
+    <input type="email" id="email" placeholder="メールアドレス">
+    <input type="password" id="password" placeholder="パスワード">
     <button id="signup">登録</button>
     <button id="login">ログイン</button>
-    <button id="logout" style="display:none;">ログアウト</button>
-  </div>
 
-  <!-- メッセージ投稿フォーム -->
-  <form id="chat-form" style="display:none;">
-    <input type="text" id="message" placeholder="メッセージ" required />
-    <button type="submit">送信</button>
-  </form>
-
-  <!-- 投稿表示 -->
-  <div id="messages"></div>
-
-  <script type="module" src="app.js"></script>
+    <script type="module" src="app_login.js"></script>
 </body>
+
 </html>

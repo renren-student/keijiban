@@ -21,7 +21,7 @@ const threadsRef = collection(db, "threads");
 
 const threadList = document.getElementById("thread-list");
 
-// スレッド表示
+// スレッド一覧をリアルタイムに表示
 const q = query(threadsRef, orderBy("createdAt", "desc"));
 onSnapshot(q, (snapshot) => {
     threadList.innerHTML = "";
@@ -33,14 +33,20 @@ onSnapshot(q, (snapshot) => {
     });
 });
 
-// 新規作成
+// スレッド作成 → 作成したスレッドへ即遷移
 document.getElementById("new-thread-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const title = document.getElementById("thread-title").value.trim();
     if (!title) return;
-    await addDoc(threadsRef, {
-        title,
-        createdAt: serverTimestamp()
-    });
-    document.getElementById("thread-title").value = "";
+
+    try {
+        const newDocRef = await addDoc(threadsRef, {
+            title,
+            createdAt: serverTimestamp()
+        });
+        // スレッド作成成功 → thread.html にジャンプ
+        window.location.href = `thread.html?id=${newDocRef.id}`;
+    } catch (e) {
+        alert("スレッド作成に失敗しました：" + e.message);
+    }
 });

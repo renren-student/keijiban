@@ -73,7 +73,7 @@ document.getElementById("chat-form").addEventListener("submit", async (e) => {
         alert("ログインしている認証済みユーザーのみが投稿できます。");
         return;
     }
-
+    console.log(auth.currentUser);
     await addDoc(messagesRef, {
         name: user.email,
         message,

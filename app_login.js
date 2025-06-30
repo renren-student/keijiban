@@ -37,7 +37,7 @@ document.getElementById("login").addEventListener("click", async () => {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         await userCredential.user.reload();
         if (userCredential.user.emailVerified) {
-            window.location.href = "threads.html"; // 認証OK→掲示板へ
+            window.location.href = "bbs.html"; // 認証OK→掲示板へ
         } else {
             alert("メール認証がまだ完了していません。");
         }

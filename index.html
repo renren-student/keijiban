@@ -1,54 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <title>学科選択</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>学科を選択してください</h1>
-  <ul>
-    <li><a href="threads.html?dept=informatics">情報学科</a></li>
-    <li><a href="threads.html?dept=design">デザイン学科</a></li>
-    <li><a href="threads.html?dept=engineering">工学科</a></li>
-  </ul>
-</body>
-</html>
 
-// --- threads.html ---
-<!DOCTYPE html>
-<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>スレッド一覧</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>ログイン</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1 id="dept-title"></h1>
-  <form id="new-thread-form">
-    <input type="text" id="thread-title" placeholder="スレッドタイトル" required>
-    <button type="submit">スレッド作成</button>
-  </form>
-  <div id="thread-list"></div>
-  <script type="module" src="app_threads.js"></script>
-</body>
-</html>
 
-// --- thread.html ---
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>スレッド</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
-  <h1 id="thread-name"></h1>
-  <form id="chat-form">
-    <input type="text" id="message" placeholder="メッセージ" required>
-    <button type="submit">送信</button>
-  </form>
-  <div id="messages"></div>
-  <script type="module" src="app_thread.js"></script>
+    <h1>ログイン　または　登録</h1>
+
+    <input type="email" id="email" placeholder="メールアドレス">
+    <input type="password" id="password" placeholder="パスワード">
+    <button id="signup">登録</button>
+    <button id="login">ログイン</button>
+
+    <script type="module" src="app_login.js"></script>
 </body>
+
 </html>

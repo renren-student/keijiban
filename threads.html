@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <title>スレッド一覧</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>スレッド一覧</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1 id="dept-title"></h1>
+    <h1>スレッド一覧</h1>
+    <form id="new-thread-form">
+        <input type="text" id="thread-title" placeholder="新しいスレッドタイトル" required />
+        <button type="submit">作成</button>
+    </form>
+    <ul id="thread-list"></ul>
 
-  <form id="new-thread-form">
-    <input type="text" id="thread-title" placeholder="スレッドタイトル" required />
-    <button type="submit">スレッド作成</button>
-  </form>
-
-  <div id="thread-list"></div>
-
-  <script type="module" src="app_threads.js"></script>
+    <script type="module" src="app_threads.js"></script>
 </body>
 </html>
